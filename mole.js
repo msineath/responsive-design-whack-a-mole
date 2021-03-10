@@ -7,30 +7,30 @@ window.addEventListener("DOMContentLoaded", () => {
 	// }, 1000);
 	const moleHeads = document.querySelectorAll(".wgs__mole-head");
     let score = 0;
-    let counter = 0;
-
+    let counter = 30;
+		let time = 3000;
     let div = document.createElement('div');
             div.innerHTML = `Turn: ${counter}`;
-            let pf = document.querySelector(".pf");
-            pf.appendChild(div);
+            let banner = document.querySelector("#banner");
+            banner.appendChild(div);
 
     let div2 = document.createElement('div');
     div2.innerHTML = `Score: ${score}`;
-    pf.appendChild(div2);
+    banner.appendChild(div2);
 
 	function popUpRandomMole() {
 		let current = selector();
-        if(counter === 30) {
+        if(counter === 0) {
             let title = document.createElement('h1');
-            title.innerHTML = "You won!";
+            title.innerHTML = "Game over";
             pf.appendChild(title);
             return;
         }
 		// console.log(current)
 		current.classList.remove("wgs__mole-head--hidden");
-        counter++;
+        counter--;
         div.innerHTML = `Turn: ${counter}`;
-		setTimeout(hideMole, 3000, current);
+		setTimeout(hideMole, time, current);
 	}
 
 	function selector() {
@@ -51,6 +51,12 @@ window.addEventListener("DOMContentLoaded", () => {
 			event.target.classList.add("wgs__mole-head--hidden");
             score++;
             div2.innerHTML = `Score: ${score}`;
+						if (time > 500) {
+							time -= 500;
+						} else if (time > 10){
+							time -= 10;
+						}
+						console.log(time)
 		})
 	);
 });

@@ -31,11 +31,22 @@ body {
 }
 
 .wgs__mole-head--whacked {
-	
+
 }
 
 .pf {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
+}
+
+#banner {
+	padding: 5px;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	background-color: lime;
+	font-size: 32px;
+	color: blue;
+	display: flex;
+	justify-content: space-around;
+	border-radius: 10px;
 }
