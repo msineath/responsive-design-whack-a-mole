@@ -1,6 +1,7 @@
 /* Write your CSS here. */
 body {
 	zoom: 0.75;
+	margin:0;
 }
 
 .wgs {
@@ -30,14 +31,16 @@ body {
 	margin-top: 241px;
 }
 
-.wgs__mole-head--whacked {
-
-}
-
 .pf {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
+}
+
+.pf div{
+	display: flex;
+	justify-self: center;
+	align-self: center;
 }
 
 #banner {

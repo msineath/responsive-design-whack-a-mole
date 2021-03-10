@@ -23,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
         if(counter === 0) {
             let title = document.createElement('h1');
             title.innerHTML = "Game over";
+            let pf = document.querySelector(".pf");
             pf.appendChild(title);
             return;
         }
